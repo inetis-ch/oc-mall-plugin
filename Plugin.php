@@ -11,6 +11,7 @@ use OFFLINE\Mall\Classes\Customer\DefaultSignUpHandler;
 use OFFLINE\Mall\Classes\Customer\SignInHandler;
 use OFFLINE\Mall\Classes\Customer\SignUpHandler;
 use OFFLINE\Mall\Classes\Payments\DefaultPaymentGateway;
+use OFFLINE\Mall\Classes\Payments\Offline;
 use OFFLINE\Mall\Classes\Payments\PaymentGateway;
 use OFFLINE\Mall\Classes\Payments\PayPalRest;
 use OFFLINE\Mall\Classes\Payments\Stripe;
@@ -191,6 +192,7 @@ class Plugin extends PluginBase
             $gateway = new DefaultPaymentGateway();
             $gateway->registerProvider(new Stripe());
             $gateway->registerProvider(new PayPalRest());
+            $gateway->registerProvider(new Offline());
 
             return $gateway;
         });
