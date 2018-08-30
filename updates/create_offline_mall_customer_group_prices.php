@@ -14,7 +14,7 @@ class CreateOfflineMallCustomerGroupPrices extends Migration
             $table->integer('customer_group_id')->unsigned();
             $table->integer('priceable_id')->unsigned();
             $table->string('priceable_type');
-            $table->text('price');
+            $table->json('price');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

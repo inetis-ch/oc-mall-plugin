@@ -36,10 +36,9 @@ abstract class DemoProduct
 
         foreach ($this->properties() as $slug => $value) {
             PropertyValue::create([
-                'describable_id'   => $this->product->id,
-                'describable_type' => Product::MORPH_KEY,
-                'property_id'      => $this->property($slug)->id,
-                'value'            => $value,
+                'product_id'  => $this->product->id,
+                'property_id' => $this->property($slug)->id,
+                'value'       => $value,
             ]);
         }
 
@@ -68,10 +67,10 @@ abstract class DemoProduct
             ]);
             foreach ($variant['properties'] as $slug => $value) {
                 PropertyValue::create([
-                    'describable_id'   => $v->id,
-                    'describable_type' => Variant::MORPH_KEY,
-                    'property_id'      => $this->property($slug)->id,
-                    'value'            => $value,
+                    'variant_id'  => $v->id,
+                    'product_id'  => $v->product_id,
+                    'property_id' => $this->property($slug)->id,
+                    'value'       => $value,
                 ]);
             }
         }
