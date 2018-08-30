@@ -479,6 +479,10 @@
                     'title' => 'Zeige Filter aus Kinderkategorien auch an',
                     'description' => 'Verwende die Filter und Eigenschaften von Produkten aus Kinderkategorien ebenfals',
                 ],
+                'includeVariants'     => [
+                    'title' => 'Varianten verwenden',
+                    'description' => 'Zeige Filter für alle Eigenschaften der Produktvarianten an',
+                ],
                 'includeSliderAssets' => [
                     'title'       => 'Binde noUI Slider ein',
                     'description' => 'Lädt die Abhängigkeiten für den noUI Slider via cdnjs',

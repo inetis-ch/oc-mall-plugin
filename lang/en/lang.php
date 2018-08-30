@@ -480,6 +480,10 @@
                     'title'       => 'Include children',
                     'description' => 'Include properties and filters from products in child categories as well',
                 ],
+                'includeVariants'     => [
+                    'title' => 'Include variants',
+                    'description' => 'Show filters for variant properties',
+                ],
                 'includeSliderAssets' => [
                     'title'       => 'Include noUI Slider',
                     'description' => 'Include all dependiencies of noUI Slider via cdnjs',

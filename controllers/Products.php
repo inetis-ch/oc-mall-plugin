@@ -64,9 +64,8 @@ class Products extends Controller
 
         foreach ($values as $id => $value) {
             $pv = PropertyValue::firstOrNew([
-                'describable_id'   => $model->id,
-                'describable_type' => Product::class,
-                'property_id'      => $id,
+                'product_id'  => $model->id,
+                'property_id' => $id,
             ]);
 
             $pv->value = $value;

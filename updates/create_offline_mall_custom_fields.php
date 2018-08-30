@@ -12,7 +12,7 @@ class CreateOfflineMallProductCustomFields extends Migration
             $table->increments('id')->unsigned();
             $table->string('name');
             $table->string('type')->default('text');
-            $table->text('price')->nullable();
+            $table->json('price')->nullable();
             $table->boolean('required')->default(false);
             $table->timestamps();
         });

@@ -103,13 +103,13 @@ class Product extends Model
         ],
     ];
     public $morphMany = [
-        'property_values'       => [PropertyValue::class, 'name' => 'describable'],
         'customer_group_prices' => [CustomerGroupPrice::class, 'name' => 'priceable'],
     ];
     public $hasMany = [
-        'variants'      => Variant::class,
-        'cart_products' => CartProduct::class,
-        'image_sets'    => ImageSet::class,
+        'variants'        => Variant::class,
+        'cart_products'   => CartProduct::class,
+        'image_sets'      => ImageSet::class,
+        'property_values' => PropertyValue::class,
     ];
     public $belongsToMany = [
         'custom_fields'   => [

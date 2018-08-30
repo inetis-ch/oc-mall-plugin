@@ -56,8 +56,10 @@ class Variant extends \Model
         'cart_product' => CartProduct::class,
         'image_sets'   => [ImageSet::class, 'key' => 'image_set_id'],
     ];
+    public $hasMany = [
+        'property_values' => [PropertyValue::class],
+    ];
     public $morphMany = [
-        'property_values'       => [PropertyValue::class, 'name' => 'describable'],
         'customer_group_prices' => [CustomerGroupPrice::class, 'name' => 'priceable'],
     ];
 
@@ -89,9 +91,9 @@ class Variant extends \Model
 
             foreach ($values as $id => $value) {
                 $pv = PropertyValue::firstOrNew([
-                    'describable_id'   => $variant->id,
-                    'describable_type' => Variant::MORPH_KEY,
-                    'property_id'      => $id,
+                    'variant_id'  => $variant->id,
+                    'product_id'  => $variant->product_id,
+                    'property_id' => $id,
                 ]);
 
                 $pv->value = $value;
